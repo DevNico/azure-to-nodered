@@ -1,0 +1,152 @@
+[
+    {
+        "id": "e8c85f40.cb85e",
+        "type": "tab",
+        "label": "iot-exercise",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "de5a1a8.2b9a5e8",
+        "type": "mqtt-broker",
+        "name": "azure",
+        "broker": " ssl://IOTHUBNAME.azure-devices.net",
+        "port": "8883",
+        "tls": "f2b3f70e.f02818",
+        "clientid": "DEVICEID",
+        "autoConnect": true,
+        "usetls": true,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f2b3f70e.f02818",
+        "type": "tls-config",
+        "name": "kevworkshop",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "290a1cda.072a8c",
+        "type": "mqtt out",
+        "z": "e8c85f40.cb85e",
+        "name": "",
+        "topic": "devices/DEVICEID/messages/events/",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "de5a1a8.2b9a5e8",
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a25f0a24.24e198",
+        "type": "inject",
+        "z": "e8c85f40.cb85e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "ca8faafe.287eb"
+            ]
+        ]
+    },
+    {
+        "id": "ca8faafe.287eb",
+        "type": "function",
+        "z": "e8c85f40.cb85e",
+        "name": "RandomData",
+        "func": "msg.payload = {\n    deviceId:'testdevice',\n    key: 'by9gYr9gSRufkpgukJIMbvv76QQIml/Ti80pn5QXdjI=',\n    protocol: 'mqtt',\n    data: createPayload()\n}\nreturn msg\n\nfunction createPayload() {\n    return {\n    temperature: randomTemperature(),\n    humidity: randomHumidity()\n}\n}\n\nfunction randomHumidity() {\n  return Math.floor(Math.random() * (50 - 45 + 1) ) + 45;\n}\n\nfunction randomTemperature() {\n    return Math.floor(Math.random() * (22 - 18 + 1) + 18)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "290a1cda.072a8c"
+            ]
+        ]
+    },
+    {
+        "id": "ef4f223c.63333",
+        "type": "mqtt in",
+        "z": "e8c85f40.cb85e",
+        "name": "",
+        "topic": "devices/DEVICEID/messages/events/",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "de5a1a8.2b9a5e8",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 1110,
+        "y": 300,
+        "wires": [
+            [
+                "53bcb58b.bb2afc"
+            ]
+        ]
+    },
+    {
+        "id": "53bcb58b.bb2afc",
+        "type": "debug",
+        "z": "e8c85f40.cb85e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 300,
+        "wires": []
+    }
+]
