@@ -84,11 +84,7 @@ You can fork the following repository to have a base for Node-Red:
   
   ```bash
   # When cloning with SSH
-  git clone git@github.com:yourGithubUsername/iot-exercise.git
-  
-  
-  # When cloning with HTTPS
-  git clone https://github.com/yourGithubUsername/iot-exercise.git       
+  git clone git@github.com:yourGithubUsername/iot-exercise.git    
   ```
 
 ## 4. Setup Node-Red
