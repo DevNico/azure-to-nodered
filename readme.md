@@ -60,7 +60,7 @@ Once we have the IoT Hub ready, we create a device. You can use the Azure Portal
 
 - In the Explorer in Visual Studio Code you should see a tab with "AZURE IOT HUB"
   
-  ![](snips\image1.png)
+  ![](https://github.com/keklireply/azure-to-nodered/blob/main/snips/image1.png)
 
 - By right clicking on the device, you can click on "Generate SAS Token for your Device". You will be asked how many hours the Key will be valid, just add enough time for how long you want to use it.
 
@@ -164,7 +164,7 @@ Now comes the good part: We can do updates on the flow and commit and push our c
 
 - On the right you can see a typical "Git" symbol that looks a bit like a tree
 
-- ![](snips\image2.png)
+- ![](https://github.com/keklireply/azure-to-nodered/blob/main/snips/image2.png)
 
 - There you can see the changes you have done and add the changes you want to commit to your repository
 
@@ -172,7 +172,7 @@ Now comes the good part: We can do updates on the flow and commit and push our c
 
 - Under "Commit-History" you can now see if there are changes from the remote repository or commits you have still in place
   
-  ![](snips\image3.png)
+  ![](https://github.com/keklireply/azure-to-nodered/blob/main/snips/image3.png)
 
 - By clicking on it you can either pull or push changes. Remember to always pull before you push something
 
