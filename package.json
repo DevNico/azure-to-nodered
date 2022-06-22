@@ -5,6 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "NODE_RED_ENABLE_PROJECTS=true node-red",
+        "reload": "node-red-reload",
+        "restart": "node-red-restart",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Kevin Klinger",
