@@ -146,10 +146,6 @@ You can fork the following repository to have a base for Node-Red:
   ```
   Username: YOURIOTHUBNAME.azure-devices.net/DEVICEID
   Password: SAS_TOKEN (previously generated)
-  
-  
-  Example SAS Token: 
-  SharedAccessSignature sr=kevworkshop.azure-devices.net%2Fdevices%2Fdeployer&sig=IjBNlNiddJWQhKZJAJn07WwfzQyiMV1rEn%2FBkiwzZYM%3D&se=1655858209
   ```
 
 - After deploying the changes by clicking on the top right red button, the Nodes should have now a green dot indicating that they are now connected to the MQTT broker => Its sending in data now!
