@@ -171,25 +171,3 @@ Now comes the good part: We can do updates on the flow and commit and push our c
   ![](https://github.com/keklireply/azure-to-nodered/blob/main/snips/image3.png)
 
 - By clicking on it you can either pull or push changes. Remember to always pull before you push something
-
-
-
-## Home Task or something for your project
-
-Imagine running Node-Red now permanently on your device, e.g. Raspberry Pi. The Node-Red node "exec" can actually run terminal commands on your device and you could inject a event, e.g. every 20 seconds to pull the latest changes from the remote repository, basically a simple automatic OTA update :) 
-
-Commands you will need:
-
-```bash
-cd ~/.node-red/projects/YOURPROJECTNAME &&  git pull origin main && npm run reload
-```
-
-Nodes:
-
-- inject
-
-- exec
-
-
-
-
